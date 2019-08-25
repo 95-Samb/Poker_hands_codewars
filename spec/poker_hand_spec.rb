@@ -9,6 +9,18 @@ describe PokerHand do
     hand = PokerHand.new("2D 3S 5H 7C 10D")
     expect(hand.identify).to eq("High card 10")
   end
+  it "identifies high card J" do
+    hand = PokerHand.new("2D 3S 5H 7C JD")
+    expect(hand.identify).to eq("High card Jack")
+  end
+  it "identifies high card A" do
+    hand = PokerHand.new("2D 3S 5H 7C AD")
+    expect(hand.identify).to eq("High card Ace")
+  end
+  it "identifies high card non-diamond A" do
+    hand = PokerHand.new("2D 3S 5H 7C AH")
+    expect(hand.identify).to eq("High card Ace")
+  end
 
 
 
